@@ -9,5 +9,5 @@ public class SpringBootRedirApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootRedirApplication.class, args);
 	}
-
+ 
 }
