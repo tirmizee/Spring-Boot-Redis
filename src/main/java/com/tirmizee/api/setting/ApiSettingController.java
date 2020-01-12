@@ -19,8 +19,7 @@ public class ApiSettingController {
 	
 	@GetMapping(path = "/")
 	public String setting() {
-		System.out.println(jedisPool.getNumActive());
-		return "";
+		return "setting";
 	}
 
 }

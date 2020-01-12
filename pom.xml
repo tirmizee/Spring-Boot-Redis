@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.tirmizee</groupId>
-	<artifactId>SpringBoot-Redir</artifactId>
+	<artifactId>SpringBoot-Redis</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>SpringBoot-Redir</name>
+	<name>SpringBoot-Redis</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
