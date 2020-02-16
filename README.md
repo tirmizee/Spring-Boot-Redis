@@ -13,6 +13,10 @@ open redis-cli
                   
        FLUSHALL
 
+-  Delete key if it exists.
+
+       DEL key
+
 ## Reference
 
 - https://github.com/microsoftarchive/redis/releases/tag/win-2.8.2104
