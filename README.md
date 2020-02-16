@@ -7,6 +7,11 @@
       .\redis-server --port 6380
       
 ### Redis keys commands
+open redis-cli
+
+ - Delete All Key
+                  
+       FLUSHALL
 
 ## Reference
 
