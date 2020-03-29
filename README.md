@@ -23,16 +23,9 @@
 
 	redis-cli -h localhost -p 6379 
 
-
-### Reference
-
-### Command 
-
-- Start Server
-
-      .\redis-server --port 6380
       
 ### Redis keys commands
+
 open redis-cli
 
  - Delete All Key
