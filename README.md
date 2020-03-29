@@ -6,7 +6,7 @@
 
 - Windows (redis.windows.conf)
  
-	redis-server redis.windows.conf
+		redis-server redis.windows.conf
 
 - Linux (redis.conf)
 
