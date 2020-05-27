@@ -36,6 +36,9 @@ open redis-cli
 
        DEL key
 
+### Tools
+- Another Redis DeskTop Manager (url = https://github.com/qishibo/AnotherRedisDesktopManager)
+
 ## Reference
 
 - https://github.com/microsoftarchive/redis/releases/tag/win-2.8.2104
