@@ -1,6 +1,6 @@
 # Spring-Boot-Redis
  
- Redis คือ open source ที่เก็บข้อมูลไว้ใน memory
+ Redis คือ open source ที่เก็บข้อมูลไว้ใน memory สามารถใช้ทำ cache
  
 ### Redis configuration file
 
