@@ -1,6 +1,6 @@
 # Spring-Boot-Redis
  
- Redis คือ open source ที่เก็บข้อมูลไว้ใน memory เป็น NOSQL ตัวหนึ่ง สามารถใช้ทำ database, cache, message broker
+ Redis คือ open source ที่เก็บโครงสร้างข้อมูลไว้ใน memory ซึ่งเป็น NOSQL ตัวหนึ่ง สามารถใช้ทำ database, cache, message broker ได้
  
 ### Redis configuration file
 
