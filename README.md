@@ -26,6 +26,8 @@
       
 ### Redis keys commands
 
+url : https://redis.io/commands
+
 open redis-cli
 
  - Delete All Key
