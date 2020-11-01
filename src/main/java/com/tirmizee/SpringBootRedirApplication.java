@@ -1,7 +1,5 @@
 package com.tirmizee;
 
-import java.util.Set;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -11,6 +9,8 @@ import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.SetOperations;
 import org.springframework.data.redis.core.ValueOperations;
+
+import com.tirmizee.dto.EmployeeDTO;
 
 @SpringBootApplication
 public class SpringBootRedirApplication implements CommandLineRunner{
@@ -27,21 +27,46 @@ public class SpringBootRedirApplication implements CommandLineRunner{
 		
 		@SuppressWarnings("unchecked")
 		RedisTemplate<String, Object> redisObjectTemplate = context.getBean("redisObjectTemplate", RedisTemplate.class);
-		
-		SetOperations<String, Object> setOperations = redisObjectTemplate.opsForSet();
-		setOperations.add("NAMES", "Pratya", "Tirmizee");
-		setOperations.add("NAMES", "C");
-		
+
 		@SuppressWarnings("unchecked")
 		RedisTemplate<String, String> redisStringTemplate = context.getBean("redisStringTemplate", RedisTemplate.class);
 		
-		ValueOperations<String, String> valueOperations = redisStringTemplate.opsForValue();
-		valueOperations.setIfAbsent("ID", "56161177");
+		valueOperationExample(redisObjectTemplate);
 		
-		HashOperations<String, String, Object> hashOperations = redisStringTemplate.opsForHash();
-		hashOperations.put("MAP", "useId", 12345);
-		hashOperations.put("MAP", "userName", "Pratya");
+		setOperationExample(redisStringTemplate.opsForSet());
+		
+//		hashOperationExample(redisObjectTemplate);
+
+	}
+	
+	public void setOperationExample(SetOperations<String, String> setOperations) {
+		setOperations.add("NAMES", "Pratya", "Tirmizee");
+		setOperations.add("NAMES", "C");
+	}
+	
+	public void valueOperationExample(RedisTemplate<String, Object> redisTemplate) {
+		ValueOperations<String, Object> valueIntegerOperations = redisTemplate.opsForValue();
+//		valueIntegerOperations.set("ID2", 56161177);
+		valueIntegerOperations.increment("ID2");
+		valueIntegerOperations.increment("ID2");
+		valueIntegerOperations.increment("ID2");
+	}
+	
+	public void hashOperationExample(RedisTemplate<String, Object> redisObjectTemplate) {
+		
+		HashOperations<String, String, Object> hashOperations = redisObjectTemplate.opsForHash();
+		hashOperations.put("MAP", "useId", 9999);
+		hashOperations.put("MAP", "userName", "Tirmizee");
+		hashOperations.put("MAP", "running", 1);
+		hashOperations.increment("MAP", "running", 1);
+		hashOperations.increment("MAP", "running", -1);
+		
+		HashOperations<String, Long, EmployeeDTO> emplyeeOperations = redisObjectTemplate.opsForHash();
+		emplyeeOperations.put("EMPLOYEE", 1L, new EmployeeDTO(1L, "Pratya2", "Tirmizee"));
+		
+		System.out.println(emplyeeOperations.get("EMPLOYEE", 1L).getFirstName());
 		
 	}
+	
  
 }
