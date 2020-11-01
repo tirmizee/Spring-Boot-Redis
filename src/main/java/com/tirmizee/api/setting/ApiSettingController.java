@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 import redis.clients.jedis.JedisPool;
 
 @RestController
-
 public class ApiSettingController {
 	
 	@Autowired
