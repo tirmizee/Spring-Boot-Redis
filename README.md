@@ -49,3 +49,4 @@ open redis-cli
 - https://github.com/quintes/redis-sentinel-config
 - https://dev.to/setevoy/redis-replication-part-1-an-overview-replication-vs-sharding-sentinel-vs-cluster-redis-topology-3ao9
 - https://www.tecmint.com/setup-redis-high-availability-with-sentinel-in-centos-8/
+- https://medium.com/@bhanuchaddha/using-redis-pub-sub-with-spring-boot-ea0d7a8c27af
