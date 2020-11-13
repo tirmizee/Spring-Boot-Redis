@@ -11,6 +11,8 @@ import org.springframework.data.redis.core.SetOperations;
 import org.springframework.data.redis.core.ValueOperations;
 
 import com.tirmizee.dto.EmployeeDTO;
+import com.tirmizee.redis.model.Student;
+import com.tirmizee.redis.repository.StudentRepository;
 
 @SpringBootApplication
 public class SpringBootRedirApplication implements CommandLineRunner{
@@ -27,13 +29,20 @@ public class SpringBootRedirApplication implements CommandLineRunner{
 		
 		@SuppressWarnings("unchecked")
 		RedisTemplate<String, Object> redisObjectTemplate = context.getBean("redisObjectTemplate", RedisTemplate.class);
-
+		
 		@SuppressWarnings("unchecked")
 		RedisTemplate<String, String> redisStringTemplate = context.getBean("redisStringTemplate", RedisTemplate.class);
 		
-		valueOperationExample(redisObjectTemplate);
+		StudentRepository studentRepository = context.getBean(StudentRepository.class);
 		
-		setOperationExample(redisStringTemplate.opsForSet());
+		Student student = new Student("Eng2015001", "John Does2", Student.Gender.MALE, 1);
+		student.incrementGrade(1);
+		studentRepository.save(student);
+		
+		
+//		valueOperationExample(redisObjectTemplate);
+		
+//		setOperationExample(redisStringTemplate.opsForSet());
 		
 //		hashOperationExample(redisObjectTemplate);
 
